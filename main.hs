@@ -96,7 +96,7 @@ movePiece piece location board
                               | player == Black = (nextPlayer, nextWhitePieces, getConstr piece location : nextBlackPieces)
                               where (player, whitePieces, blackPieces) = board
                                     nextPlayer = changeTurn player
-                                    myFilter = filter (\p -> getLocation p /= getLocation piece)
+                                    myFilter = filter (\p -> getLocation p /= getLocation piece && getLocation p /= location)
                                     nextWhitePieces = myFilter whitePieces
                                     nextBlackPieces = myFilter blackPieces
 

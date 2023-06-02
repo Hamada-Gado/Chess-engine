@@ -117,7 +117,7 @@ traversePawnVertical1 color (c, i) (player, whitePieces, blackPieces)
 traversePawnVertical2 :: Player -> Location -> Board -> [Location]
 traversePawnVertical2 color (c, i) (player, whitePieces, blackPieces)
                               | color == Black && i == 7 && not (isPiece (c, i - 1) (whitePieces ++ blackPieces)) && not (isPiece (c, i - 2) (whitePieces ++ blackPieces)) = [(c, i - 2)]
-                              | color == White && i == 2 && not (isPiece (c, i + 2) (whitePieces ++ blackPieces)) && not (isPiece (c, i + 2) (whitePieces ++ blackPieces)) = [(c, i + 2)]
+                              | color == White && i == 2 && not (isPiece (c, i + 1) (whitePieces ++ blackPieces)) && not (isPiece (c, i + 2) (whitePieces ++ blackPieces)) = [(c, i + 2)]
                               | otherwise = []
 
 traversePawnDiagonal :: Player -> Location -> Board -> [Location]
